@@ -1,6 +1,5 @@
 #include <Time.h>
 #include <TimeLib.h>
-#include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266HTTPClient.h>
