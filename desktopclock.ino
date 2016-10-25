@@ -31,6 +31,8 @@ void setup() {
   delay (3000);
 
   WiFiMulti.addAP("eLearning", "");
+  WiFiMulti.addAP("Perpustakaan", "");
+  WiFiMulti.addAP("KangArie", "");
   lcdOut("wifi connecting", 0);
 }
 
@@ -52,20 +54,31 @@ void loop() {
     lcd.setCursor (0, 0);
     lcd.print(year());
     lcd.print("/");
-    lcd.print(month());
+    lcd.print(angka(month()));
     lcd.print("/");
-    lcd.print(day());
+    lcd.print(angka(day()));
     lcd.print(" ");
 
     lcd.setCursor (0, 1);
-    lcd.print(hour());
+    lcd.print(angka(hour()));
     lcd.print(":");
-    lcd.print(minute());
+    lcd.print(angka(minute()));
     lcd.print(":");
-    lcd.print(second());
+    lcd.print(angka(second()));
 
   }
   delay(1000);
+}
+
+String angka(int n) {
+  String tmp;
+  if (n < 10) {
+    tmp = String(0) + String(n);
+  }
+  else {
+    tmp = String(n);
+  }
+  return tmp;
 }
 
 int getURL(String url) {
